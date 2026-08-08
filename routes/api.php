@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FoodController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -10,3 +11,4 @@ Route::get('/user', function (Request $request) {
 
 
 Route::apiResource('categories', CategoryController::class);
+Route::apiResource('foods', FoodController::class);
