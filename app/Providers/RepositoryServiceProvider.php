@@ -7,6 +7,8 @@ use App\Repositories\Contracts\CategoryRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\FoodRepository;
 use App\Repositories\Contracts\FoodRepositoryInterface;
+use App\Repositories\OrderRepository;
+use App\Repositories\Contracts\OrderRepositoryInterface;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,11 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             FoodRepositoryInterface::class,
             FoodRepository::class
+        );
+
+        $this->app->bind(
+            OrderRepositoryInterface::class,
+            OrderRepository::class
         );
     }
 
