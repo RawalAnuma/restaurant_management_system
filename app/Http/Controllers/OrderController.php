@@ -22,15 +22,17 @@ class OrderController extends Controller
         return OrderResource::collection($orders);
     }
 
-    public function store(StoreOrderRequest $request)
-    {
-        $order = $this->orderRepository->create(
-            $request->validated()
-        );
+    public function store(StoreOrderRequest $request){
+
+        $data = $request->validated();
+
+        $data['user_id'] = $request->user()->id;
+
+        $order = $this->orderRepository->create($data);
 
         return (new OrderResource($order))
-            ->response()
-            ->setStatusCode(201);
+        ->response()
+        ->setStatusCode(201);
     }
 
     public function show(int $id)
