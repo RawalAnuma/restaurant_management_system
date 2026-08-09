@@ -28,18 +28,6 @@ class StoreOrderRequest extends FormRequest
                 'integer',
                 'min:1',
             ],
-
-            'items.*.price' => [
-                'required',
-                'numeric',
-                'min:0',
-            ],
-
-            'total_amount' => [
-                'required',
-                'numeric',
-                'min:0',
-            ],
         ];
     }
 }
