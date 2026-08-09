@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Order;
+use App\Models\Food;
 use App\Repositories\Contracts\OrderRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -26,13 +27,32 @@ class OrderRepository implements OrderRepositoryInterface
 
     public function create(array $data): Order
     {
+        $totalAmount = 0;
+
+        $items = [];
+
+        foreach ($data['items'] as $item) {
+            $food = Food::findOrFail($item['food_id']);
+
+            $price = $food->price;
+            $quantity = $item['quantity'];
+
+            $totalAmount += $price * $quantity;
+
+            $items[] = [
+                'food_id' => $food->id,
+                'quantity' => $quantity,
+                'price' => $price,
+            ];
+        }
+
         $order = Order::create([
             'user_id' => $data['user_id'],
-            'total_amount' => $data['total_amount'],
-            'status' => $data['status'] ?? 'pending',
+            'total_amount' => $totalAmount,
+            'status' => 'pending',
         ]);
 
-        $order->orderItems()->createMany($data['items']);
+        $order->orderItems()->createMany($items);
 
         return $order->load([
             'user',
