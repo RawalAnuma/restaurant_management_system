@@ -19,7 +19,7 @@ class FoodSeeder extends Seeder
             'category_id' => $pizza->id,
             'name' => 'Margherita Pizza',
             'description' => 'Classic pizza with tomato, mozzarella and basil.',
-            'price' => 10.00,
+            'price' => 450.00,
             'image' => null,
             'status' => true,
         ]);
@@ -28,7 +28,7 @@ class FoodSeeder extends Seeder
             'category_id' => $pizza->id,
             'name' => 'Chicken Pizza',
             'description' => 'Pizza topped with delicious chicken pieces.',
-            'price' => 12.00,
+            'price' => 550.00,
             'image' => null,
             'status' => true,
         ]);
@@ -37,7 +37,7 @@ class FoodSeeder extends Seeder
             'category_id' => $burger->id,
             'name' => 'Chicken Burger',
             'description' => 'Crispy chicken burger with fresh vegetables.',
-            'price' => 8.00,
+            'price' => 400.00,
             'image' => null,
             'status' => true,
         ]);
@@ -46,7 +46,7 @@ class FoodSeeder extends Seeder
             'category_id' => $burger->id,
             'name' => 'Cheese Burger',
             'description' => 'Juicy burger topped with melted cheese.',
-            'price' => 9.00,
+            'price' => 450.00,
             'image' => null,
             'status' => true,
         ]);
@@ -55,7 +55,7 @@ class FoodSeeder extends Seeder
             'category_id' => $drinks->id,
             'name' => 'Coke',
             'description' => 'Chilled Coca-Cola.',
-            'price' => 2.00,
+            'price' => 150.00,
             'image' => null,
             'status' => true,
         ]);
@@ -64,7 +64,7 @@ class FoodSeeder extends Seeder
             'category_id' => $drinks->id,
             'name' => 'Fresh Lemonade',
             'description' => 'Refreshing homemade lemonade.',
-            'price' => 3.00,
+            'price' => 200.00,
             'image' => null,
             'status' => true,
         ]);
@@ -73,7 +73,7 @@ class FoodSeeder extends Seeder
             'category_id' => $desserts->id,
             'name' => 'Chocolate Cake',
             'description' => 'Rich and moist chocolate cake.',
-            'price' => 5.00,
+            'price' => 300.00,
             'image' => null,
             'status' => true,
         ]);
