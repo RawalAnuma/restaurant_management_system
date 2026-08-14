@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateFoodRequest;
 use App\Http\Resources\FoodResource;
 use App\Repositories\Contracts\FoodRepositoryInterface;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Storage;
 
 class FoodController extends Controller
 {
@@ -24,9 +25,13 @@ class FoodController extends Controller
 
     public function store(StoreFoodRequest $request)
     {
-        $food = $this->foodRepository->create(
-            $request->validated()
-        );
+        $data = $request->validated();
+        
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('foods', 'public');
+        }
+
+        $food = $this->foodRepository->create($data);
 
         return (new FoodResource($food))
             ->response()
@@ -47,8 +52,8 @@ class FoodController extends Controller
     }
 
     public function update(
-        UpdateFoodRequest $request,
-        int $id
+    UpdateFoodRequest $request,
+    int $id
     ) {
         $food = $this->foodRepository->findById($id);
 
@@ -58,13 +63,20 @@ class FoodController extends Controller
             ], 404);
         }
 
-        $food = $this->foodRepository->update(
-            $food,
-            $request->validated()
-        );
+        $data = $request->validated();
+
+        if ($request->hasFile('image')) {
+            if ($food->image) {
+                Storage::disk('public')->delete($food->image);
+            }
+
+            $data['image'] = $request->file('image')->store('foods', 'public');
+        }
+
+        $food = $this->foodRepository->update($food, $data);
 
         return new FoodResource($food);
-    }
+    }   
 
     public function destroy(int $id): JsonResponse
     {
