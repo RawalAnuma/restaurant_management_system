@@ -12,9 +12,11 @@ class OrderRepository implements OrderRepositoryInterface
     public function getAll(): Collection
     {
         return Order::with([
-            'user',
             'orderItems.food',
-        ])->latest()->get();
+            'user',
+        ])
+        ->orderBy('created_at', 'desc')
+        ->get();
     }
 
     public function findById(int $id): ?Order
