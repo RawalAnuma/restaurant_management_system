@@ -1,58 +1,116 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Restaurant Management System - Backend
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## About the Project
 
-## About Laravel
+Restaurant Management System is a REST API backend developed using Laravel for managing restaurant operations.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The backend provides APIs for authentication, food management, category management, and order management. It is designed to work with the Flutter Admin Application.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Admin authentication
+- Food CRUD operations
+- Category CRUD operations
+- Order management
+- Order status updates
+- Food image upload
+- API Resources
+- Repository Pattern
+- Form validation
+- Token-based authentication
 
-## Learning Laravel
+## Technologies Used
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Laravel
+- PHP
+- MySQL
+- Laravel Sanctum
+- REST API
+- Eloquent ORM
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Getting Started
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Clone the repository:
 
-## Agentic Development
+git clone <repository-url>
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Navigate to the project:
 
-```bash
-composer require laravel/boost --dev
+cd restaurant_management_system
 
-php artisan boost:install
-```
+Install dependencies:
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+composer install
 
-## Contributing
+Create the environment file:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+cp .env.example .env
 
-## Code of Conduct
+Generate the application key:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+php artisan key:generate
 
-## Security Vulnerabilities
+Configure your MySQL database in the `.env` file.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Run migrations:
 
-## License
+php artisan migrate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Run seeders:
+
+php artisan db:seed
+
+Start the Laravel server:
+
+php artisan serve
+
+## API
+
+The backend provides REST APIs for:
+
+- Authentication
+- Foods
+- Categories
+- Orders
+
+The API can be tested using Postman or consumed by the Flutter Admin Application.
+
+## Database
+
+The application uses MySQL.
+
+Main entities include:
+
+- Users
+- Foods
+- Categories
+- Orders
+- Order Items
+
+## Authentication
+
+The API uses Laravel Sanctum for token-based authentication.
+
+Authenticated requests require:
+
+Authorization: Bearer <token>
+
+## Project Architecture
+
+The project follows the Repository Pattern to separate business logic and data access responsibilities.
+
+Controller → Repository → Model → Database
+
+API Resources are used to structure API responses.
+
+## Related Project
+
+### Flutter Admin Application
+
+<your-flutter-repository-link>
+
+## Author
+
+Anuma Rawal
+
+B.Sc. (Hons) Computing
