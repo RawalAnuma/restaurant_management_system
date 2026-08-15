@@ -30,39 +30,49 @@ The backend provides APIs for authentication, food management, category manageme
 
 ## Getting Started
 
+```bash
 Clone the repository:
 
-git clone <repository-url>
+git clone https://github.com/RawalAnuma/restaurant_management_system.git
+```
 
-Navigate to the project:
+- Navigate to the project:
 
 cd restaurant_management_system
 
-Install dependencies:
+
+- Install dependencies:
 
 composer install
 
-Create the environment file:
+
+- Create the environment file:
 
 cp .env.example .env
 
-Generate the application key:
+
+- Generate the application key:
 
 php artisan key:generate
 
-Configure your MySQL database in the `.env` file.
 
-Run migrations:
+- Configure your MySQL database in the `.env` file.
+
+
+- Run migrations:
 
 php artisan migrate
 
-Run seeders:
+
+- Run seeders:
 
 php artisan db:seed
 
-Start the Laravel server:
+
+- Start the Laravel server:
 
 php artisan serve
+
 
 ## API
 
@@ -91,7 +101,7 @@ Main entities include:
 
 The API uses Laravel Sanctum for token-based authentication.
 
-Authenticated requests require:
+- Authenticated requests require:
 
 Authorization: Bearer <token>
 
@@ -111,6 +121,4 @@ API Resources are used to structure API responses.
 
 ## Author
 
-Anuma Rawal
-
-B.Sc. (Hons) Computing
+Anuma Rawal - B.Sc. (Hons) Computing
