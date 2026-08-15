@@ -38,41 +38,41 @@ git clone https://github.com/RawalAnuma/restaurant_management_system.git
 
 ### Navigate to the project:
 
-cd restaurant_management_system
+- cd restaurant_management_system
 
 
 ### Install dependencies:
 
-composer install
+- composer install
 
 
 ### Create the environment file:
 
-cp .env.example .env
+- cp .env.example .env
 
 
 ### Generate the application key:
 
-php artisan key:generate
+- php artisan key:generate
 
-
-### Configure your MySQL database in the `.env` file.
+- Configure your MySQL database in the `.env` file.
 
 
 ### Run migrations:
 
-php artisan migrate
+- php artisan migrate
 
 
 ### Run seeders:
 
-php artisan db:seed
+- php artisan db:seed
 
 
 ### Start the Laravel server:
 
-php artisan serve
+- php artisan serve
 
+---
 
 ## API
 
@@ -117,7 +117,7 @@ API Resources are used to structure API responses.
 
 ### Flutter Admin Application
 
-<your-flutter-repository-link>
+https://github.com/RawalAnuma/restaurant_management_app.git
 
 ## Author
 
