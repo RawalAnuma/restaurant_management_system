@@ -36,40 +36,40 @@ Clone the repository:
 git clone https://github.com/RawalAnuma/restaurant_management_system.git
 ```
 
-- Navigate to the project:
+### Navigate to the project:
 
 cd restaurant_management_system
 
 
-- Install dependencies:
+### Install dependencies:
 
 composer install
 
 
-- Create the environment file:
+### Create the environment file:
 
 cp .env.example .env
 
 
-- Generate the application key:
+### Generate the application key:
 
 php artisan key:generate
 
 
-- Configure your MySQL database in the `.env` file.
+### Configure your MySQL database in the `.env` file.
 
 
-- Run migrations:
+### Run migrations:
 
 php artisan migrate
 
 
-- Run seeders:
+### Run seeders:
 
 php artisan db:seed
 
 
-- Start the Laravel server:
+### Start the Laravel server:
 
 php artisan serve
 
